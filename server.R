@@ -69,7 +69,7 @@ shinyServer(function(input, output) {
 
     Bars <- reactive( {
         XX<-input$Action
-        NumberHist[nn+1]<<-NumberHist[nn+1]+1
+            NumberHist[nn+1]<<-NumberHist[nn+1]+1
         NumberHist
     })
 

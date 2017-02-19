@@ -784,7 +784,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Presentation of Roulette</h1><p>Marc van Leeuwen<br/>february 17, 2017</p>
+<h1>Presentation of Roulette</h1><p>Marc van Leeuwen<br/>february 19, 2017</p>
 
 <div class="slideContent" >
 
@@ -796,31 +796,45 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <p>A simple simulation of a roulette wheel.</p>
 
-<p>This program let you practice betting strategies on a roulette table</p>
+<ul>
+<li>This Shiny program let you practice betting strategies on a roulette table</li>
+<li>You can choose to bet on a number, Odd, Even, Black and Red.</li>
+<li>The program shows you the Odd, Even, Black and Red statistics</li>
+<li>And shows you a barplot with the preceding numbers</li>
+</ul>
 
-<p>You can choose to bet on a number, Odd, Even, Black and Red.</p>
+<p>In this slideshow a simulation of 100 roulette turns have been made.</p>
 
-<p>The program shows you the Odd, Even, Black and Red statistics</p>
-
-<p>and shows you a barplot with the preceding numbers</p>
+<ul>
+<li>The link to the shiny app:<a href="http://markie1mb.shinyapps.io/ddp_course_project_roulette/">http://markie1mb.shinyapps.io/ddp_course_project_roulette/</a></li>
+<li>The link to the Programfiles: <a href="http://github.com/markie1mb/DDP">http://github.com/markie1mb/DDP</a></li>
+</ul>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>The Odd, Even, Black and Red statistics</h3>
+<h3>The Number history and Statistics</h3>
 <div class="slideContent" >
-<p>This calculates how often a Odd, Even, Black and Red</p>
+<ul>
+<li>In the Shiny application there are 2 datasets containing the data.</li>
+</ul>
 
-<p>has been drawn (Note: 0 does&#39;n count).</p>
+<pre><code class="r">NumberHist
+</code></pre>
 
-<p>In this slide show, 100 roulettenumbers have been drawn.</p>
+<pre><code> 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 
+ 2  4  3  3  5  1  1  2  1  4  2  2  3  2  2  3  3  1  4  2  6  5  6  0  5 
+25 26 27 28 29 30 31 32 33 34 35 36 
+ 2  1  2  4  0  0  2  5  1  4  4  3 
+</code></pre>
 
-<p>The statistics are shown below.</p>
+<pre><code class="r">StatsHist
+</code></pre>
 
-<pre><code>    red black   odd  even
-1 41.00 55.00 52.00 44.00
-2  0.41  0.55  0.52  0.44
+<pre><code>    red black  odd  even
+1 49.00 49.00 40.0 58.00
+2  0.49  0.49  0.4  0.58
 </code></pre>
 
 </div>
@@ -831,11 +845,10 @@ hljs.initHighlightingOnLoad();
 <div class="mediaInline slideContent" >
 <p>The barplot shows you the preceding numbers.</p>
 
-<p>In this slide show, 100 roulettenumbers have been drawn.</p>
+<pre><code class="r">barplot(NumberHist)
+</code></pre>
 
-<p>The numbers are shown below:</p>
-
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-3"/></p>
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-3"/></p>
 
 </div>
 
@@ -845,13 +858,16 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <p>It is possible to bet.</p>
 
-<p>You start with 500 $</p>
+<ol>
+<li>You start with 500 $</li>
+<li>You decide the amount you want to play with</li>
+<li>You choose Number, Odd, Even, Black, Red</li>
+<li>After pressing the [Bet] Button, You can see how much you win or loose&hellip;</li>
+</ol>
 
-<p>You decide the amount you want to play with</p>
+<p>The serverfile containing the calculatin was to big to fit in the presentation</p>
 
-<p>You choose Number, Odd, Even, Black, Red</p>
-
-<p>After pressing the [Bet] Button, You can see how much you win or loose&hellip;</p>
+<p>I can only reference to server.R in <a href="https://github.com/markie1mb/DDP">https://github.com/markie1mb/DDP</a></p>
 
 </div>
 

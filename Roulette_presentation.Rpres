@@ -1,7 +1,7 @@
 Presentation of Roulette
 ========================================================
 author: Marc van Leeuwen
-date:february 17, 2017
+date:february 19, 2017
 autosize: true
 
 Roulette
@@ -9,26 +9,23 @@ Roulette
 
 A simple simulation of a roulette wheel.
 
-This program let you practice betting strategies on a roulette table
+- This Shiny program let you practice betting strategies on a roulette table
+- You can choose to bet on a number, Odd, Even, Black and Red.
+- The program shows you the Odd, Even, Black and Red statistics
+- And shows you a barplot with the preceding numbers
 
-You can choose to bet on a number, Odd, Even, Black and Red.
-
-The program shows you the Odd, Even, Black and Red statistics
-
-and shows you a barplot with the preceding numbers
-
+In this slideshow a simulation of 100 roulette turns have been made.
 
 
-The Odd, Even, Black and Red statistics
+- The link to the shiny app:http://markie1mb.shinyapps.io/ddp_course_project_roulette/
+- The link to the Programfiles: http://github.com/markie1mb/DDP
+
+
+
+The Number history and Statistics
 ========================================================
 
-This calculates how often a Odd, Even, Black and Red
-
-has been drawn (Note: 0 does'n count).
-
-In this slide show, 100 roulettenumbers have been drawn.
-
-The statistics are shown below.
+- In the Shiny application there are 2 datasets containing the data.
 
 ```{r, echo=FALSE}
 library(plotly)
@@ -40,10 +37,6 @@ RedBlack<-c('red','black','red','black','red','black','red','black','red','black
             'black','red','black','red','black','red','black','red',
             'red','black','red','black','red','black','red','black','red','black',
             'black','red','black','red','black','red','black','red')
-```
-
-
-```{r, echo=TRUE}
 while(N<100)
 {
 N<-N+1
@@ -57,6 +50,11 @@ if (nn!=0){                              ## Is used for the statistics
 }
 StatsHist[2,]<-StatsHist[1,]/N          ## Is used for the statuistics
 }
+```
+
+
+```{r, echo=TRUE}
+NumberHist
 StatsHist
 ```
 
@@ -65,11 +63,8 @@ The Barplot
 
 The barplot shows you the preceding numbers.
 
-In this slide show, 100 roulettenumbers have been drawn.
 
-The numbers are shown below:
-
-```{r, echo=FALSE}
+```{r, echo=TRUE}
 barplot(NumberHist)
 ```
 
@@ -78,10 +73,14 @@ Betting
 
 It is possible to bet.
 
-You start with 500 $
+1. You start with 500 $
+2. You decide the amount you want to play with
+3. You choose Number, Odd, Even, Black, Red
+4. After pressing the [Bet] Button, You can see how much you win or loose...
 
-You decide the amount you want to play with
 
-You choose Number, Odd, Even, Black, Red
 
-After pressing the [Bet] Button, You can see how much you win or loose...
+The serverfile containing the calculatin was to big to fit in the presentation
+
+I can only reference to server.R in https://github.com/markie1mb/DDP
+
